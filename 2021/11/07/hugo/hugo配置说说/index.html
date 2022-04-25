@@ -1,0 +1,400 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Hugo配置说说 | zl-maker的个人博客</title><meta name="keywords" content="hugo"><meta name="author" content="zl-maker"><meta name="copyright" content="zl-maker"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="服务部署1.首先保证成功激活腾讯云开发. 2.点击一键部署至云开发  推荐创建上海环境。如选择广州环境，需要在 twikoo.init() 时额外指定环境 region: “ap-guangzhou”  3.进入环境-登录授权，启用“匿名登录” 4.进入环境-安全配置，将博客网址添加到“WEB 安全域名” 5.进入环境-HTTP 访问服务，复制链接备用。 进入云函数，修改自定义 serverkey">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hugo配置说说">
+<meta property="og:url" content="https://zl-maker.github.io/2021/11/07/hugo/hugo%E9%85%8D%E7%BD%AE%E8%AF%B4%E8%AF%B4/index.html">
+<meta property="og:site_name" content="zl-maker的个人博客">
+<meta property="og:description" content="服务部署1.首先保证成功激活腾讯云开发. 2.点击一键部署至云开发  推荐创建上海环境。如选择广州环境，需要在 twikoo.init() 时额外指定环境 region: “ap-guangzhou”  3.进入环境-登录授权，启用“匿名登录” 4.进入环境-安全配置，将博客网址添加到“WEB 安全域名” 5.进入环境-HTTP 访问服务，复制链接备用。 进入云函数，修改自定义 serverkey">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2021-11-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-04-25T14:05:36.687Z">
+<meta property="article:author" content="zl-maker">
+<meta property="article:tag" content="hugo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/zl-maker/DrawingBed@img/image/1636982024781rocked.png"><link rel="canonical" href="https://zl-maker.github.io/2021/11/07/hugo/hugo%E9%85%8D%E7%BD%AE%E8%AF%B4%E8%AF%B4/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e18b855c8e728d9f1e9bd1cf01ef102f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: zl-maker","link":"链接: ","source":"来源: zl-maker的个人博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-right"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hugo配置说说',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-04-25 22:05:36'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/zl-maker/DrawingBed@img/image/1635148748379-星图.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/say/"><i class="fa-fw fas fa-bomb"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 相册</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">zl-maker的个人博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/say/"><i class="fa-fw fas fa-bomb"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 相册</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Hugo配置说说</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-11-06T16:00:00.000Z" title="发表于 2021-11-07 00:00:00">2021-11-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-04-25T14:05:36.687Z" title="更新于 2022-04-25 22:05:36">2022-04-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Hugo配置说说"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="服务部署"><a href="#服务部署" class="headerlink" title="服务部署"></a>服务部署</h2><p>1.首先保证成功激活腾讯云开发.</p>
+<p>2.<a href="https://console.cloud.tencent.com/tcb/env/index?action=CreateAndDeployCloudBaseProject&appUrl=https://github.com/lmm214/bber&branch=main">点击一键部署至云开发</a></p>
+<blockquote>
+<p>推荐创建上海环境。如选择广州环境，需要在 twikoo.init() 时额外指定环境 region: “ap-guangzhou”</p>
+</blockquote>
+<p>3.进入环境-登录授权，启用“匿名登录”</p>
+<p>4.进入<a href="https://console.cloud.tencent.com/tcb/env/safety">环境-安全配置</a>，将博客网址添加到“WEB 安全域名”</p>
+<p>5.进入<a href="https://console.cloud.tencent.com/tcb/env/access">环境-HTTP 访问服务</a>，复制链接备用。</p>
+<p>进入<a href="https://console.cloud.tencent.com/tcb/scf/index">云函数</a>，修改自定义 serverkey <code>bber</code> 并保存备用。</p>
+<p>6.进入云函数，修改自定义 serverkey bber 并保存备用。</p>
+<p>7.扫码进入公众号，输入命名绑定。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/iwyang/pic/202108171354632.jpg" alt="bibi-0"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/bber 你刚刚设置的key,https://你的云函数HTTP访问地址/bber
+
+比如: /bber mykey,https://balabala.ap-shanghai.app.tcloudbase.com/bber<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>8. 手动添加一条哔哔 <em>必须要有</em></strong></p>
+<p>进入腾讯云数据库-&gt;talks-&gt;文档列表-&gt;添加文档</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">字段: content
+类型: string
+值: 随便<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>点击确定</p>
+<p>验证微信发送</p>
+<p>9.微信发送一条文字，返回哔哔成功，talks 文档列表里多出来一条，即为服务部署成功。</p>
+<h2 id="前端部署"><a href="#前端部署" class="headerlink" title="前端部署"></a>前端部署</h2><p>1.打开 Hugo 的 unsafe</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">markup</span><span class="token punctuation">:</span>
+  <span class="token key atrule">tableOfContents</span><span class="token punctuation">:</span>
+    <span class="token key atrule">endLevel</span><span class="token punctuation">:</span> <span class="token number">4</span>
+    <span class="token key atrule">ordered</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">startLevel</span><span class="token punctuation">:</span> <span class="token number">2</span>
+  <span class="token key atrule">highlight</span><span class="token punctuation">:</span>
+    <span class="token key atrule">noClasses</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">goldmark</span><span class="token punctuation">:</span>
+    <span class="token key atrule">renderer</span><span class="token punctuation">:</span>
+      <span class="token key atrule">unsafe</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>2.新建一个<em>markdown</em>文件</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>speak<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>speak</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- 使用markdown渲染 --></span>
+<span class="token comment">&lt;!-- 使用markdown渲染 --></span>
+<span class="token comment">&lt;!-- &lt;script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ispeak-bber/ispeak-bber-md.min.js" charset="utf-8" >&lt;/script> --></span>
+<span class="token comment">&lt;!-- 不使用markdown渲染 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/ispeak-bber/ispeak-bber.min.js<span class="token punctuation">"</span></span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- 解析微信表情（参考：https://github.com/buddys/qq-wechat-emotion-parser） --></span>
+<span class="token comment">&lt;!-- &lt;script src="https://cdn.jsdelivr.net/gh/buddys/qq-wechat-emotion-parser@master/dist/qq-wechat-emotion-parser.min.js">&lt;/script> --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+ispeakBber
+    <span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">el</span><span class="token operator">:</span> <span class="token string">'#speak'</span><span class="token punctuation">,</span> <span class="token comment">// 容器选择器</span>
+      <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'bore'</span><span class="token punctuation">,</span> <span class="token comment">// 显示的昵称</span>
+      <span class="token literal-property property">envId</span><span class="token operator">:</span> <span class="token string">'腾讯云开发环境id'</span><span class="token punctuation">,</span> <span class="token comment">// 环境id</span>
+      <span class="token literal-property property">region</span><span class="token operator">:</span> <span class="token string">'ap-shanghai'</span><span class="token punctuation">,</span> <span class="token comment">// 腾讯云地址，默认为上海</span>
+      <span class="token literal-property property">limit</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token comment">// 每次加载的条数，默认为5</span>
+      <span class="token literal-property property">avatar</span><span class="token operator">:</span> <span class="token string">'https://cdn.jsdelivr.net/gh/iwyang/pic/avatar.jpg'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">fromColor</span><span class="token operator">:</span><span class="token string">'rgb(245, 150, 170)'</span><span class="token punctuation">,</span> <span class="token comment">// 下方标签背景颜色 默认 rgb(245, 150, 170)</span>
+      <span class="token literal-property property">loadingImg</span><span class="token operator">:</span> <span class="token string">'https://7.dusays.com/2021/03/04/d2d5e983e2961.gif'</span><span class="token punctuation">,</span> <span class="token comment">// 自定义loading的图片，示例值为默认值</span>
+      <span class="token literal-property property">dbName</span><span class="token operator">:</span><span class="token string">'talks'</span> <span class="token comment">// 数据的名称，默认talks，避免有人的命名不是这个，所以加入此配置字段。</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token comment">// 哔哔加载完成后的回调函数，你可以写你自己的功能</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'哔哔 加载完成'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="部署-BBer-weixin-公众号"><a href="#部署-BBer-weixin-公众号" class="headerlink" title="部署 BBer-weixin 公众号"></a>部署 BBer-weixin 公众号</h2><p>点击<a href="https://console.cloud.tencent.com/tcb/env/index?action=CreateAndDeployCloudBaseProject&appUrl=https://github.com/lmm214/bber-weixin&branch=main">部署到云开发</a>将 BBer-weixin 微信公众号后端，一键部署到云开发。</p>
+<p>对接的微信公众号简要流程：</p>
+<p>1.点击 <a href="https://console.cloud.tencent.com/tcb/scf/index">bber-weixin</a> 云函数，右上角<strong>【编辑】</strong>，开启<strong>【固定 IP】</strong>，留存<strong>公网固定 IP</strong>。</p>
+<blockquote>
+<p>我将 from <code>微信公众号</code>改成了<code>💎 WeChat</code></p>
+</blockquote>
+<p>2.进入<a href="https://console.cloud.tencent.com/tcb/env/access">环境-HTTP 访问服务</a>，获取<code>触发路径链接</code>并留存，如以下格式：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">https://bb-f5c0f-222222.ap-shanghai.app.tcloudbase.com/bber-weixin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>3.打开 <a href="https://mp.weixin.qq.com/">微信公众平台</a>，进入开发-基本配置，获取<code>AppID</code>和<code>AppSecret</code>留存，修改<code>IP白名单</code>为上一步的公网固定 IP。继续服务器配置：</p>
+<blockquote>
+<p>消息加密方式选择<code>兼容模式</code></p>
+</blockquote>
+<p>一个<code>URL</code>，即第 2 步留存的触发链接；</p>
+<p>一个<code>Token</code>，预设为 <code>weixin</code></p>
+<p><strong>!!!先不点，不点，不点，不点提交！！！</strong></p>
+<p>4.回 <a href="https://console.cloud.tencent.com/tcb/scf/index">bber-weixin</a> 云函数，填入<code>微信公众号appid</code>、<code>微信公众号appsecret</code> 保存。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">const token <span class="token operator">=</span> <span class="token string">'weixin'</span> // 微信公众号的服务器验证用的令牌 token
+//填入自己的微信公众号appid和appsecret
+var wxappid <span class="token operator">=</span> <span class="token string">'微信公众号appid'</span>,
+    wxappsecret <span class="token operator">=</span> <span class="token string">'微信公众号appsecret'</span>,<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>5.回 <a href="https://mp.weixin.qq.com/">微信公众平台</a>，提交，验证成功！</p>
+<p>6.回 <a href="https://console.cloud.tencent.com/tcb/scf/index">bber-weixin</a> 云函数，注释第 44 行代码，保存。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">if<span class="token punctuation">(</span>tmpStr <span class="token operator">==</span> signature<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+     //请求来源鉴权
+     //成功后注释下行代码
+     //return event.queryStringParameters.echostr //成功后注释本行代码
+     //成功后注释上行代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>7.手动配置或更新代码： <a href="https://github.com/lmm214/bber-weixin/tree/main/bber-weixin">https://github.com/lmm214/bber-weixin/tree/main/bber-weixin</a></p>
+<h2 id="公众号发布说说"><a href="#公众号发布说说" class="headerlink" title="公众号发布说说"></a>公众号发布说说</h2><p>1.先在公众号发一张图片</p>
+<p>2.接着输入<code>/a &lt;br&gt;文字说明</code></p>
+<p>(输入<code>&lt;br&gt;</code>是为了使图片和文字不处于同一行)</p>
+<p>注意：用公众号发图片会一连发几张，不知道是什么原因，以后就用浏览器插件发图片，注意<strong>比例 16:9，长度 568px</strong></p>
+<h2 id="Chrome-Edge-发布说说"><a href="#Chrome-Edge-发布说说" class="headerlink" title="Chrome + Edge 发布说说"></a>Chrome + Edge 发布说说</h2><h3 id="安装本地插件"><a href="#安装本地插件" class="headerlink" title="安装本地插件"></a>安装本地插件</h3><p>Chrome 安装本地插件：</p>
+<p>访问 Chrome——更多工具——扩展程序——左上角“加载已解压的扩展程序”，选择我提供的附件，解压缩后的文件夹 1.0.0_0_Chrome，然后回到 Chrome，点开右上角<code>扩展程序</code>来固定插件。</p>
+<p>注意：插件文件移动或丢失后，浏览器扩展失效，因为不是云端的，所以要保存在可靠路径。</p>
+<h3 id="应用商店安装插件"><a href="#应用商店安装插件" class="headerlink" title="应用商店安装插件"></a>应用商店安装插件</h3><p>下载地址：<a href="https://chrome.google.com/webstore/detail/ispeak-bber%E6%97%B6%E5%85%89%E6%9C%BA/mmehomnjakoijcfmmofbmkaigcdkkbke/related">iSpeak-bber 时光机</a></p>
+<p>本地插件<code>from</code>默认为<code>🌈 Chrome</code></p>
+<h2 id="Android-捷径发布说说"><a href="#Android-捷径发布说说" class="headerlink" title="Android 捷径发布说说"></a>Android 捷径发布说说</h2><p>从 Github 下载安装这款 “HTTP 快捷方式” apk，安装后继续下文操作。</p>
+<p>下载地址：<a href="https://github.com/Waboodoo/HTTP-Shortcuts/releases">HTTP-Shortcuts</a></p>
+<p>打开 HTTP 快捷方式 App，选择新建快捷方式，自定义名称、描述，在 “基本设置” 中，设置方法为 “POST” 或 “GET”，URL 为</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">https://你后台显示的.ap-shanghai.app.tcloudbase.com/bber?key<span class="token operator">=</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>至于 key、from，我们设置为常量，text 则设置为变量 content，每次发布的时候填写说说内容。</p>
+<p>点击 URL 右侧的 {}，选择添加变量。常量 key 为你云函数里的 key，如果没有特别设置就是 bber。from 我们设置一个好玩的如<code>📱 Android 11</code>。添加一个变量 content。（个人觉得 from 直接设置为<code>Android</code>就行，不然免得以后安卓升级版本，还要跟着修改。）</p>
+<p>接着回到 URL 页面，补充完刚才添加的常量和变量，如以下格式：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">https://你后台显示的.ap-shanghai.app.tcloudbase.com/bber?key<span class="token operator">=</span><span class="token punctuation">&#123;</span>key<span class="token punctuation">&#125;</span><span class="token operator">&amp;</span><span class="token assign-left variable">from</span><span class="token operator">=</span><span class="token punctuation">&#123;</span>from<span class="token punctuation">&#125;</span><span class="token operator">&amp;</span><span class="token assign-left variable">text</span><span class="token operator">=</span><span class="token punctuation">&#123;</span>content<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>右上角，保存这个快捷方式，然后长按发送到桌面，搞定！</p>
+<h2 id="修改ispeak-bber样式"><a href="#修改ispeak-bber样式" class="headerlink" title="修改ispeak-bber样式"></a>修改<code>ispeak-bber</code>样式</h2><h3 id="隐藏页面标题"><a href="#隐藏页面标题" class="headerlink" title="隐藏页面标题"></a>隐藏页面标题</h3><p>将以下代码放在文章正文最上方。</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">&lt;style>
+.article-header</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+&lt;/style><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="修改顶部文字"><a href="#修改顶部文字" class="headerlink" title="修改顶部文字"></a>修改顶部文字</h3><p>自己胡乱改的，居然起了作用。不管了先用再说。</p>
+<p>1.首先下载：<a href="https://cdn.jsdelivr.net/npm/ispeak-bber/ispeak-bber-md.min.js">ispeak-bber-md.min.js</a></p>
+<p>2.用<code>Notepad++</code>打开，搜索<code>My BiBi</code>改成<code>我的说说</code>。</p>
+<p>3.按 F12，打开浏览器控制台，定位标题。可以发现<code>color: #49b1f5</code>前面就是标题字体大小，搜索<code>color: #49b1f5</code>，将前面的字体改成 22px：<code>font-size: 22px</code></p>
+<p>4.接着改图标大小，一样方法定位图标，可以发现<code>color: black</code>后面就是图标大小，搜索<code>color: black</code>，将后面图标大小改成 22px：<code>font-size: 22px</code></p>
+<h3 id="修复说说出现图片时，顶部空白过大问题"><a href="#修复说说出现图片时，顶部空白过大问题" class="headerlink" title="修复说说出现图片时，顶部空白过大问题"></a>修复说说出现图片时，顶部空白过大问题</h3><p>搜索<code>white-space</code>作如下修改</p>
+<pre class="line-numbers language-diff" data-language="diff"><code class="language-diff"><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line"> &#123;\n  padding: 10px 0;\n  white-space: pre-wrap;\n&#125;
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line"> &#123;\n  padding: 0.8rem 0;\n&#125;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>注意：用公众号发图片会一连发几张，不知道是什么原因，以后就用浏览器插件发图片，注意<strong>比例 16:9，长度 568px</strong></p>
+<h3 id="解决公众号连续发多张图片"><a href="#解决公众号连续发多张图片" class="headerlink" title="解决公众号连续发多张图片"></a>解决公众号连续发多张图片</h3><p>云函数代码问题，改成下面这样即可（<strong>还未测试</strong>）：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">104</span>行
+<span class="token builtin class-name">let</span> res <span class="token operator">=</span> await cloudRequest<span class="token punctuation">(</span>cloudHttpUrl,cloudKey,createTime,content<span class="token punctuation">)</span>
+
+<span class="token number">124</span>行
+<span class="token builtin class-name">let</span> res <span class="token operator">=</span> await cloudRequest<span class="token punctuation">(</span>cloudHttpUrl,cloudKey,createTime,content<span class="token punctuation">)</span>
+
+<span class="token number">160</span>行
+<span class="token keyword">function</span> cloudRequest<span class="token punctuation">(</span>cloudHttpUrl,cloudKey,createTime,content<span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>中，删掉 “createTime,”，接着</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">162</span>行
+var param1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'key'</span><span class="token builtin class-name">:</span> cloudKey,<span class="token string">'time'</span><span class="token builtin class-name">:</span> createTime,<span class="token string">'text'</span><span class="token builtin class-name">:</span> content,<span class="token string">'from'</span><span class="token builtin class-name">:</span><span class="token string">'微信公众号'</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>删掉 “’time’: createTime,” 就解决了。</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://immmmm.com/bb-by-wechat-pro/">「哔哔点啥」微信公众号 2.0</a></p>
+<p><a href="https://immmmm.com/bb-talks-json/">熟悉的味道，不一样配方</a></p>
+<p><a href="https://www.fanziqi.site/posts/af935eab.html">手把手教你配置哔哔点啥</a></p>
+<p><a href="https://guole.fun/posts/bber-caikeng/">Android “捷径”・木木 bber 踩坑记录 + 电脑 or 手机 4 种方式直发说说</a></p>
+<p><a href="https://www.antmoe.com/posts/7ec820ee/">给 bber 换个皮肤</a></p>
+<p><a href="https://blog.zhheo.com/p/a6947667.html">Hexo-Butterfly 说说朋友圈适配（哔哔 for 腾讯云）自用</a></p>
+<p><a href="https://iamlm.com/archives/keep-learning-hugo/">继续折腾 Hugo—看评论</a></p>
+<p><a href="https://gitlab.com/DreamyTZK/ispeak-bber">ispeak-bber</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://zl-maker.github.io">zl-maker</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zl-maker.github.io/2021/11/07/hugo/hugo%E9%85%8D%E7%BD%AE%E8%AF%B4%E8%AF%B4/">https://zl-maker.github.io/2021/11/07/hugo/hugo配置说说/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://zl-maker.github.io" target="_blank">zl-maker的个人博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/hugo/">hugo</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/11/04/notes/Promise/index/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Promise学习笔记</div></div></a></div><div class="next-post pull-right"><a href="/2021/11/11/notes/Axios/index/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Axios学习笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/06/24/hugo/Hugo%20Stack%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="Hugo Stack主题配置与使用"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/zl-maker/DrawingBed@img/image/1635148748379-星图.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-24</div><div class="title">Hugo Stack主题配置与使用</div></div></a></div><div><a href="/2021/07/27/hugo/Hugo%E9%83%A8%E7%BD%B2%E5%88%B0centos%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="Hugo部署到centos服务器"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/zl-maker/DrawingBed@img/image/1650873890286abc-124.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-27</div><div class="title">Hugo部署到centos服务器</div></div></a></div><div><a href="/2021/08/06/hugo/hugo%E5%88%A9%E7%94%A8Github%20Actions%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/" title="hugo利用Github Actions自动构建博客"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/zl-maker/DrawingBed@img/image/1635148748379-星图.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-06</div><div class="title">hugo利用Github Actions自动构建博客</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/zl-maker/DrawingBed@img/image/1635148748379-星图.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">zl-maker</div><div class="author-info__description">一个正在努力成长的five博客主,希望有一天能从菜鸟变成别人眼中的大佬</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" href="https://github.com/zl-maker"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">还有好多文章还没整理好,分类管理也没弄好,但我会尽快将这些东西整理好</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2"><span class="toc-number">1.</span> <span class="toc-text">服务部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E9%83%A8%E7%BD%B2"><span class="toc-number">2.</span> <span class="toc-text">前端部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2-BBer-weixin-%E5%85%AC%E4%BC%97%E5%8F%B7"><span class="toc-number">3.</span> <span class="toc-text">部署 BBer-weixin 公众号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AC%E4%BC%97%E5%8F%B7%E5%8F%91%E5%B8%83%E8%AF%B4%E8%AF%B4"><span class="toc-number">4.</span> <span class="toc-text">公众号发布说说</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chrome-Edge-%E5%8F%91%E5%B8%83%E8%AF%B4%E8%AF%B4"><span class="toc-number">5.</span> <span class="toc-text">Chrome + Edge 发布说说</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E6%8F%92%E4%BB%B6"><span class="toc-number">5.1.</span> <span class="toc-text">安装本地插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-number">5.2.</span> <span class="toc-text">应用商店安装插件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-%E6%8D%B7%E5%BE%84%E5%8F%91%E5%B8%83%E8%AF%B4%E8%AF%B4"><span class="toc-number">6.</span> <span class="toc-text">Android 捷径发布说说</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9ispeak-bber%E6%A0%B7%E5%BC%8F"><span class="toc-number">7.</span> <span class="toc-text">修改ispeak-bber样式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%90%E8%97%8F%E9%A1%B5%E9%9D%A2%E6%A0%87%E9%A2%98"><span class="toc-number">7.1.</span> <span class="toc-text">隐藏页面标题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E9%A1%B6%E9%83%A8%E6%96%87%E5%AD%97"><span class="toc-number">7.2.</span> <span class="toc-text">修改顶部文字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E5%A4%8D%E8%AF%B4%E8%AF%B4%E5%87%BA%E7%8E%B0%E5%9B%BE%E7%89%87%E6%97%B6%EF%BC%8C%E9%A1%B6%E9%83%A8%E7%A9%BA%E7%99%BD%E8%BF%87%E5%A4%A7%E9%97%AE%E9%A2%98"><span class="toc-number">7.3.</span> <span class="toc-text">修复说说出现图片时，顶部空白过大问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%85%AC%E4%BC%97%E5%8F%B7%E8%BF%9E%E7%BB%AD%E5%8F%91%E5%A4%9A%E5%BC%A0%E5%9B%BE%E7%89%87"><span class="toc-number">7.4.</span> <span class="toc-text">解决公众号连续发多张图片</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-number">8.</span> <span class="toc-text">参考链接</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By zl-maker</div><div class="framework-info"><span>框架 </span><a href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://butterfly.js.org/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'DghQAd6lh1DlEKW9PJbHQFQT-MdYXbMMI',
+      appKey: 'F6T44xNmDv3C36AlU34eilsi',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script>window.$crisp = [];
+window.CRISP_WEBSITE_ID = "aac0f29d-6efb-4653-a116-8790585c4332";
+(function () {
+  d = document;
+  s = d.createElement("script");
+  s.src = "https://client.crisp.chat/l.js";
+  s.async = 1;
+  d.getElementsByTagName("head")[0].appendChild(s);
+})();
+$crisp.push(["safe", true])
+
+if (true) {
+  $crisp.push(["do", "chat:hide"])
+  $crisp.push(["on", "chat:closed", function() {
+    $crisp.push(["do", "chat:hide"])
+  }])
+  var chatBtnFn = () => {
+    var chatBtn = document.getElementById("chat_btn")
+    chatBtn.addEventListener("click", function(){
+      $crisp.push(["do", "chat:show"])
+      $crisp.push(["do", "chat:open"])
+
+    });
+  }
+  chatBtnFn()
+} else {
+  if (true) {
+    function chatBtnHide () {
+      $crisp.push(["do", "chat:hide"])
+    }
+    function chatBtnShow () {
+      $crisp.push(["do", "chat:show"])
+    }
+  }
+}</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
