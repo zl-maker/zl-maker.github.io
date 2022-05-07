@@ -207,22 +207,22 @@ window.addEventListener('load',preloader.endLoading())</script><div class="js-pj
   function initValine () {
     const valine = new Valine(Object.assign({
       el: '#vcomment',
-      appId: 'DghQAd6lh1DlEKW9PJbHQFQT-MdYXbMMI',
-      appKey: 'F6T44xNmDv3C36AlU34eilsi',
+      appId: 'kE03tPxUEHfGNeQ0I3yqCBrw-MdYXbMMI',
+      appKey: '9ArAjrdANNKoxtInh2m69kCN',
       avatar: 'monsterid',
       serverURLs: '',
       emojiMaps: "",
       path: window.location.pathname,
       visitor: false
-    }, null))
+    }, ))
   }
 
   if (typeof Valine === 'function') initValine() 
   else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
 }
 
-if ('Valine' === 'Valine' || !true) {
-  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
   else setTimeout(loadValine, 0)
 } else {
   function loadOtherComment () {
